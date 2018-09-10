@@ -259,11 +259,14 @@ class OrderPayment(object):
         :type: str
         """
         allowed_values = ["Affirm", "Amazon", "Amazon SC", "Cash", "Check", "COD", "Coinbase", "Credit Card", "eBay", "eCheck", "LoanHero", "Money Order", "PayPal", "Purchase Order", "Quote Request", "Unknown", "Wire Transfer"]
+
         if payment_method not in allowed_values:
-            raise ValueError(
-                "Invalid value for `payment_method` ({0}), must be one of {1}"
-                .format(payment_method, allowed_values)
-            )
+            payment_method='Unkown'
+
+            #raise ValueError(
+             #   "Invalid value for `payment_method` ({0}), must be one of {1}"
+              #  .format(payment_method, allowed_values)
+            #)
 
         self._payment_method = payment_method
 
